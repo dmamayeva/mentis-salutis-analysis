@@ -3,7 +3,7 @@ import pandas as pd
 from flask import Flask, request, jsonify
 
 
-app = Flask('mentis-analysis')
+app = Flask('mentis-salutis-analysis')
 
 model = joblib.load('xgb_model.pkl')
 pipeline = joblib.load('pipeline.pkl')
