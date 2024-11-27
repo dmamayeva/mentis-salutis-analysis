@@ -6,3 +6,27 @@ This project aims to predict the likelihood of depression in individuals by anal
 # Dataset info
 The dataset is available at [Kaggle]([https://website-name.com](https://www.kaggle.com/datasets/ikynahidwin/depression-professional-dataset))
 # How to run
+```
+docker build -t mentis-salutis .
+```
+```
+docker run -it -p 9696:9696 mentis-salutis:latest
+```
+As request:
+```
+import requests
+url = "http://0.0.0.0:9696/predict"
+
+example_request = {"Gender":"Female",
+"Age":37,
+"Work Pressure":2.0,
+"Job Satisfaction":4.0,
+"Sleep Duration":"7-8 hours",
+"Dietary Habits":"Moderate",
+"Have you ever had suicidal thoughts ?":"No",
+"Work Hours":6,
+"Financial Stress":2,
+"Family History of Mental Illness":"No"}
+
+requests.post(url, json=example_request).json()
+```
