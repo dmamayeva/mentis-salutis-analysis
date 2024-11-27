@@ -5,8 +5,8 @@ from flask import Flask, request, jsonify
 
 app = Flask('mentis-analysis')
 
-model = joblib.load('/app/xgb_model.pkl')
-pipeline = joblib.load('/app/pipeline.pkl')
+model = joblib.load('xgb_model.pkl')
+pipeline = joblib.load('pipeline.pkl')
 
 @app.route('/predict', methods=['POST'])
 def predict():

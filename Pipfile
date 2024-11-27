@@ -4,19 +4,19 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-pandas = "*"
-numpy = "*"
 scikit-learn = "*"
-matplotlib = "*"
+numpy = "*"
+pandas = "*"
+flask = "*"
+xgboost = "*"
 catboost = "*"
-jupyter = "*"
 ipykernel = "*"
 seaborn = "*"
-xgboost = "*"
-flask = "*"
 gunicorn = "*"
+streamlit = "*"
 
 [dev-packages]
+ipykernel = "*"
 
 [requires]
-python_version = "3.11"
+python_version = "3.12"

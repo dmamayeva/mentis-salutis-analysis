@@ -1,11 +1,8 @@
-FROM python:3.9-slim
-
+FROM python:3.12-slim
 RUN pip install pipenv
 WORKDIR /app
-COPY ["predict", "./"]
-
 COPY ["Pipfile", "Pipfile.lock", "./"]
 RUN pipenv install --deploy --system
-COPY ["app.py", "xgb_model.bin", "pipeline.bin", "./"]
+COPY ["predict.py", "xgb_model.pkl", "pipeline.pkl", "./"]
 EXPOSE 9696
-ENTRYPOINT ["gunicorn", "--bind", "0.0.0.0:9696", "app:app"]
+ENTRYPOINT ["gunicorn", "--bind", "0.0.0.0:9696", "app:predict"]

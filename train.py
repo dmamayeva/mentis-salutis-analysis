@@ -29,8 +29,8 @@ model = XGBClassifier()
 model.fit(X_train_processed, y_train)
 
 try:
-    joblib.dump(model, 'predict/xgb_model.pkl')
-    joblib.dump(pipeline, 'predict/pipeline.pkl')
+    joblib.dump(model, 'xgb_model.pkl')
+    joblib.dump(pipeline, 'pipeline.pkl')
     print("Model dumped successfully.")
 except Exception as e:
     print(f"Error dumping model: {e}")
